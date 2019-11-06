@@ -1,10 +1,21 @@
 <?php
 require_once "Vehicule.php";
+require_once "LightableInterface.php";
 
-class Car extends Vehicule
+class Car extends Vehicule implements LightableInterface
 {
 
     private $energy;
+
+    public function switchOn(): bool
+    {
+        return true;
+    }
+
+    public function switchOff(): bool
+    {
+        return false;
+    }
 
     const ALLOWED_ENERGIES = [
         'fuel',
