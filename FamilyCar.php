@@ -2,5 +2,4 @@
 
 final class FamilyCar extends Car
 {
-
 }
