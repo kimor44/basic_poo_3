@@ -32,7 +32,7 @@ class Car extends Vehicule implements LightableInterface
 
     public function start()
     {
-        $this->currentSpeed = 10;
+        $this->setCurrentSpeed(10);
     }
 
     /**
