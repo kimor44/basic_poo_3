@@ -11,6 +11,7 @@ require_once "ResidentialWay.php";
 require_once "MotorWay.php";
 
 $test = new Pickup('red', 6, 'fuel');
+$test->setEnergy('electric');
 $conf = new FamilyCar('blue', 4, 'fuel');
 $bike = new Bicycle('green', 1);
 $way = new MotorWay();

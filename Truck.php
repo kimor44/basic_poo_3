@@ -1,6 +1,7 @@
 <?php
 require_once "Vehicule.php";
 require_once "LightableInterface.php";
+require_once "SetEnergy.php";
 
 class Truck extends Vehicule implements LightableInterface
 {
@@ -34,13 +35,7 @@ class Truck extends Vehicule implements LightableInterface
         $this->setStorageCapacity($storageCapacity);
     }
 
-    public function setEnergy(string $energy): Truck
-    {
-        if (in_array($energy, self::ALLOWED_ENERGIES)) {
-            $this->energy = $energy;
-        }
-        return $this;
-    }
+    use SetEnergy;
 
     function getEnergy():? string
     {
