@@ -9,6 +9,11 @@ require_once "HighWay.php";
 require_once "PedestrianWay.php";
 require_once "ResidentialWay.php";
 require_once "MotorWay.php";
+require_once "Speedometer.php";
+
+echo Speedometer::convertMilesToKm(88).'<br>';
+
+echo Speedometer::convertKmToMiles(130).'<br>';
 
 $test = new Pickup('red', 6, 'fuel');
 try{
