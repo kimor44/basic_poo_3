@@ -11,6 +11,14 @@ require_once "ResidentialWay.php";
 require_once "MotorWay.php";
 
 $test = new Pickup('red', 6, 'fuel');
+try{
+    $test->start();
+} catch (Exception $e){
+    echo $e->getMessage();
+    $test->setParkBrake(false);
+} finally{
+    echo '<br>Ma voiture roule comme un donut';
+}
 $test->setEnergy('electric');
 $conf = new FamilyCar('blue', 4, 'fuel');
 $bike = new Bicycle('green', 1);
