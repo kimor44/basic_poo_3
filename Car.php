@@ -8,6 +8,8 @@ class Car extends Vehicule implements LightableInterface
 
     private $energy;
 
+    private $hasParkBrake = true;
+
     public function switchOn(): bool
     {
         return true;
@@ -31,8 +33,11 @@ class Car extends Vehicule implements LightableInterface
         $this->setEnergy($energy);
     }
 
-    public function start()
+    public function start(): void
     {
+        if($this->hasParkBrake == true){
+            throw new Exception('Impossible d`avancer avec le frein à main');
+        }
         $this->setCurrentSpeed(10);
     }
 
@@ -58,5 +63,13 @@ class Car extends Vehicule implements LightableInterface
     {
         $this->ernergyLevel = $energyLevel;
     }
-    
+
+    /**
+     * @param mixed $hasParkBrake
+     */
+    public function setParkBrake(bool $hasParkBrake): void
+    {
+        $this->hasParkBrake = $hasParkBrake;
+    }
+
 }
